@@ -1,13 +1,445 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    /* Remove default body margin */
+    padding: 0;
+    /* Remove default body padding */
+}
+.header {
+    background-color: #050f47;
+    color: white;
+    padding: 0;
+    /* Remove extra padding */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Space out title and navbar */
+    height: 120px;
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.logo {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5px;
+}
+
+/* Style for the visible title in the header */
+.header h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 10px 0;
+    /* Adjust margin for more space */
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+}
+
+.Navbar {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    /* Apply the catchy font */
+}
+
+.Navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    /* Adjust font size as needed */
+}
+
+.Navbar a:hover {
+    background-color: #3e57c7;
+    transition: background-color 0.3s ease;
+}
+/* Intro Section */
+.intro-section {
+    background-color: #050f47;
+    /* Same color as the header */
+    color: white;
+    /* Text color matching the header */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+}
+
+/* Left side text content */
+.text-content h2 {
+    font-size: 55px;
+    /* Increase the font size */
+    font-family: 'Poppins', sans-serif;
+    /* Apply the catchy font */
+    font-weight: 600;
+    /* Make it a bit bolder */
+    margin-bottom: 10px;
+    /* Space below the heading */
+}
+
+.text-content p {
+    font-size: 20px;
+    /* Increase the font size for the paragraph */
+    font-family: 'Poppins', sans-serif;
+    /* Apply the catchy font */
+    color: #d9bfbf;
+    /* Dark color for better readability */
+}
+
+/* Right side image content */
+.image-content img {
+    width: 800px;
+    /* Increase the width */
+    height: auto;
+    /* Keep the aspect ratio */
+    
+    margin-left: 100px;
+}
+/* Section background and layout */
+.custom-card-section {
+    background: linear-gradient(to bottom, rgba(113, 58, 158, 1), rgba(113, 58, 158, 0.7));
+    /* Gradient that fades from fully opaque to partially transparent */
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center align the title */
+}
+
+/* New section title styling */
+.section-title {
+    font-size: 36px;
+    /* Adjust font size as needed */
+    color: black;
+    /* Use a color that stands out against the background */
+    text-align: center;
+    /* Center align the title */
+    margin-bottom: 30px;
+    /* Space below the title */
+}
+
+.content-container {
+    display: flex;
+    /* Keep flex layout for text and card */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Text content on the left */
+.text-content1 {
+    flex: 1;
+    /* Allow it to take up space */
+    margin-right: 50px;
+    /* Space between text and card */
+}
+
+.text-content1 h2 {
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    /* Optional startup font */
+    margin-bottom: 20px;
+}
+
+.text-content1 p {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Custom card styling */
+.custom-card {
+    flex: 1;
+    background-color: white;
+    padding: 0;
+    /* Remove padding to let the image fill the card */
+    width: 400px;
+    /* Width of the card */
+    height: 300px;
+    /* Height of the card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Shadow for depth */
+
+    /* Asymmetrical rounded corners */
+    border-radius: 50px 0px 50px 0;
+    /* The values above control each corner, creating the rounded effect */
+
+    /* Ensure the image covers the entire card */
+    overflow: hidden;
+    /* Hide overflow */
+}
+
+.custom-card img {
+    width: 100%;
+    /* Make the image cover the full width of the card */
+    height: 100%;
+    /* Make the image cover the full height of the card */
+    object-fit: cover;
+    /* Ensure the image maintains its aspect ratio while covering the card */
+    border-radius: 50px 0 50px 0;
+    /* Match the card's rounded corners */
+}
+/* Section background and layout for the big card */
+.big-card-section {
+    background: linear-gradient(to top, rgba(113, 58, 158, 1), rgba(113, 58, 158, 0.7));
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 600px;
+}
+
+/* Big custom card section styling */
+.big-card-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0; /* Space above and below the section */
+}
+
+/* Big custom card styling */
+.big-custom-card {
+    background-color: #050f47;
+    padding: 50px;
+    width: 1300px; /* Width for the larger card */
+    height: 500px; /* Height for the larger card */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for emphasis */
+    border-radius: 0px 80px 0px 80px; /* Larger rounding for the big card */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center vertically */
+}
+
+/* Big card content */
+.big-card-content {
+    flex: 2; /* Takes up more space in the flex container */
+    text-align: left; /* Align text to the left */
+    margin-right: 50px; /* Space between the big and small cards */
+}
+
+/* Optional: Style the content inside the big card */
+.big-card-content h3 {
+    color: white;
+    font-size: 55px; /* Increase the font size */
+    font-family: 'Poppins', sans-serif; /* Apply the catchy font */
+    font-weight: 600; /* Make it a bit bolder */
+    margin-bottom: 10px; /* Space below the heading */
+}
+.big-card-content h2 {
+    color: white;
+    font-size: 30px;
+    /* Increase the font size */
+    font-family: 'Poppins', sans-serif;
+    /* Apply the catchy font */
+    font-weight: 600;
+    /* Make it a bit bolder */
+    margin-bottom: 10px;
+    /* Space below the paragraph */
+}
+
+.big-card-content p {
+    color: white;
+    font-size: 20px; /* Increase the font size */
+    font-family: 'Poppins', sans-serif; /* Apply the catchy font */
+    font-weight: 600; /* Make it a bit bolder */
+    margin-bottom: 10px; /* Space below the paragraph */
+}
+
+/* Small custom card styling */
+.small-custom-card {
+    flex: 1;
+    background-color: white;
+    border-radius: 20px;
+    border-radius: 0px 80px 0px 80px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    width: 400px;
+    /* Increased width for better design */
+    height: 400px;
+    /* Increased height for better design */
+    position: relative;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for small card */
+.small-custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    filter: blur(2px);
+}
+
+/* File upload container */
+.file-upload {
+    border: 3px dashed #ccc;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.file-upload:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: #04de71;
+}
+
+/* Hover effect for blur */
+.file-upload:hover .upload-instructions {
+    filter: blur(1px);
+}
+
+/* Upload instructions styling */
+.upload-instructions p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.upload-instructions span {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #777;
+}
+
+/* Browse files button styling */
+.browse-files-btn {
+    background-color: #04de71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.browse-files-btn:hover {
+    background-color: #039b52;
+    transform: scale(1.05);
+}
+
+/* Hidden file input field */
+#file-input {
+    display: none;
+}
+
+/* Dragover highlight */
+.file-upload.dragover {
+    background-color: rgba(4, 222, 113, 0.1);
+    border-color: #04de71;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to bottom, rgba(113, 58, 158, 1), rgba(113, 58, 158, 0.7));
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    color: #050f47;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #050f47;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #3e57c7;
+}
+
+/* Features Section */
+.features-section {
+    padding: 40px 20px;
+    background: linear-gradient(to top, rgba(113, 58, 158, 1), rgba(113, 58, 158, 0.7));
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 30px;
+    color: #050f47;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature {
+    background-color: #050f47;
+    border: 1px solid #ccc;
+    border-radius: 0px 20px 0px 20px;
+    padding: 20px;
+    width: 250px;
+}
+
+.feature h3 {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: #050f47;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 0px;
+}
+
+.footer p {
+    margin: 0;
 }

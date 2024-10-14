@@ -13,12 +13,12 @@ describe("User", function () {
     [owner, addr1, addr2] = await ethers.getSigners();
 
     user = await User.deploy();
-    await user.deployed();
+    await user.waitForDeployment();
   });
 
   it("Should register a candidate", async function () {
     await user.connect(addr1).registerCandidate("John", "Doe", "Smith", "QmImageHash", 123456);
-    const candidate = await user.candidates(addr1.address);
+    const candidate = await user.getCandidate(addr1.address);
     expect(candidate.name).to.equal("John");
     expect(candidate.fathersName).to.equal("Doe");
     expect(candidate.lastName).to.equal("Smith");
@@ -47,20 +47,41 @@ describe("User", function () {
     expect(sortedDocuments[2].title).to.equal("Cherry");
   });
 
-  it("Should fetch archived documents by date", async function () {
-    await user.connect(owner).registerCandidate("John", "Doe", "Smith", "QmImageHash", 123456);
-    await user.connect(owner).registerDocument("DocTitle1", "Description1");
-    await user.connect(owner).registerDocument("DocTitle2", "Description2");
 
-    const timestamp = Math.floor(Date.now() / 1000);
+it("Should fetch archived documents by date", async function () {
+    await user.connect(owner).registerCandidate("John", "Doe", "Smith", "QmImageHash", 123456);
+
+    // Register the first document and get its timestamp
+    await user.connect(owner).registerDocument("DocTitle1", "Description1");
+    const timestamp1 = await user.getCurrentTimestamp();
 
     // Adding delay to simulate different timestamps
     await new Promise(resolve => setTimeout(resolve, 1000));
-    await user.connect(owner).registerDocument("DocTitle3", "Description3");
 
-    const archivedDocuments = await user.archiveDocumentsByDate(timestamp);
-    expect(archivedDocuments.length).to.equal(2); // Assuming two documents were created before the timestamp
+    // Register the second document and get its timestamp
+    await user.connect(owner).registerDocument("DocTitle2", "Description2");
+    const timestamp2 = await user.getCurrentTimestamp();
+
+    // Adding delay to simulate different timestamps
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    // Register the third document and get its timestamp
+    await user.connect(owner).registerDocument("DocTitle3", "Description3");
+    const timestamp3 = await user.getCurrentTimestamp();
+
+    // Fetch documents archived by the first timestamp
+    const archivedDocuments1 = await user.archiveDocumentsByDate(timestamp1);
+    expect(archivedDocuments1.length).to.equal(1);
+
+    // Fetch documents archived by the second timestamp
+    const archivedDocuments2 = await user.archiveDocumentsByDate(timestamp2);
+    expect(archivedDocuments2.length).to.equal(1);
+
+    // Fetch documents archived by the third timestamp
+    const archivedDocuments3 = await user.archiveDocumentsByDate(timestamp3);
+    expect(archivedDocuments3.length).to.equal(1);
   });
+
 
   it("Only owner can register documents", async function () {
     await user.connect(addr1).registerCandidate("John", "Doe", "Smith", "QmImageHash", 123456);
