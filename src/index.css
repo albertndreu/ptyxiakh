@@ -443,3 +443,334 @@ body {
 .footer p {
     margin: 0;
 }
+
+/*RegisterCandidate.js*/
+
+
+.register-container {
+    background: linear-gradient(to bottom, rgba(5, 15, 71, 1), rgba(5, 15, 71, 0.7));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+
+}
+
+.register-form {
+    background: linear-gradient(to top, rgba(113, 58, 158, 1), rgba(113, 58, 158, 0.7));
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.register-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.register-form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.register-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.register-form button:hover {
+    background-color: #0056b3;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Semi-transparent white */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    /* Ensure it is on top of other content */
+}
+
+.loading-message {
+    font-size: 2rem;
+    /* Adjust as necessary */
+    color: #333;
+    /* Change color as needed */
+}
+
+/*Login.js*/
+/* Login container styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Full height of the viewport */
+    padding: 20px;
+    /* Padding for small devices */
+    background: linear-gradient(to top, rgba(113, 58, 158, 1), rgba(113, 58, 158, 0.7));
+}
+
+/* Form styles */
+.login-form {
+    background-color: #fff;
+    /* White background for the form */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    padding: 40px;
+    width: 300px;
+    /* Fixed width for the form */
+}
+
+/* Header styles */
+.login-form h1 {
+    margin-bottom: 20px;
+    /* Space below the header */
+    font-size: 24px;
+    /* Size of the header */
+    color: #333;
+    /* Dark text color */
+}
+
+/* Input field styles */
+.login-form input {
+    width: 100%;
+    /* Full width input */
+    padding: 10px;
+    /* Padding inside inputs */
+    margin-bottom: 20px;
+    /* Space between inputs */
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: 4px;
+    /* Slightly rounded corners */
+}
+
+/* Button styles */
+.login-form button {
+    width: 100%;
+    /* Full width button */
+    padding: 10px;
+    background-color: #5cb85c;
+    /* Green background */
+    color: white;
+    /* White text */
+    border: none;
+    /* No border */
+    border-radius: 4px;
+    /* Slightly rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-size: 16px;
+    /* Font size */
+}
+
+/* Button hover effect */
+.login-form button:hover {
+    background-color: #4cae4c;
+    /* Darker green on hover */
+}
+
+/* Error message styles */
+.error-message {
+    color: red;
+    /* Red text for error messages */
+    margin-bottom: 10px;
+    /* Space below the error message */
+}
+
+/* Link styles */
+.login-form p {
+    text-align: center;
+    /* Centered text */
+}
+
+.login-form a {
+    color: #007bff;
+    /* Bootstrap blue */
+    text-decoration: none;
+    /* No underline */
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+/*Profile.js */
+.profile-container {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(to top, rgba(113, 58, 158, 1), rgba(113, 58, 158, 0.7));
+}
+
+.sidebar {
+    width: 200px;
+    background: linear-gradient(to bottom, rgba(5, 15, 71, 1), rgba(5, 15, 71, 0.7));
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.sidebar ul li button:hover {
+    background-color: #0056b3;
+}
+
+.profile-content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.profile-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.image-upload {
+    margin-top: 20px;
+}
+
+.image-upload img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.image-upload input[type="file"] {
+    display: block;
+}
+
+/*sumbitDocument*/
+.submit-container {
+    background: linear-gradient(to top, rgba(113, 58, 158, 1), rgba(113, 58, 158, 0.7));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+
+}
+
+.form-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.submit-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 15px;
+    
+}
+
+.input-field,
+.file-input {
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.submit-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+    
+}
+
+.message {
+    color: #ff0000;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.success-message {
+    color: #28a745;
+    margin-top: 15px;
+}
+
+.another-file-button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    z-index: 1000;
+}
+

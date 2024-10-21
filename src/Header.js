@@ -15,7 +15,7 @@ const Header = () => {
                 <a href="/AllDocuments">All Documents</a>
                 <a href="/MyDocuments">My Documents</a>
                 <a href="/Profile">Profile</a>
-                <a href="/LogIn/Logout">Login/Logout</a>
+                <a href="/LogIn">Login</a>
                 <a href="/RegisterCandidate">RegisterCandidate</a>
             </div>
         </nav>

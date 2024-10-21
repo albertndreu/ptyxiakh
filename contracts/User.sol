@@ -17,9 +17,9 @@ contract User {
     event candidateCreated(address indexed candidateAddress, string name);
     event documentCreated(address indexed documentAddress, string documentTitle);
 
-    struct Candidate {
+    struct Candidate {  
         uint id;
-        uint totalFiles;
+        uint totalFiles; 
         string name;
         string fathersName;
         string lastName;
